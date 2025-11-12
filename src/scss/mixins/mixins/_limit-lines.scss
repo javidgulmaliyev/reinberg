@@ -1,0 +1,15 @@
+@mixin limit-lines($line-count) {
+  &,
+  > * {
+    --line-count: #{$line-count};
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--line-count);
+
+    display: -webkit-box;
+
+    block-size: calc(var(--line-count) * 1lh);
+    line-clamp: var(--line-count);
+    overflow: hidden;
+  }
+}

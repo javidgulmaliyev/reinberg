@@ -1,0 +1,66 @@
+{
+  "name": "reinberg",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "gulp dev",
+    "build": "gulp prod",
+    "fonts": "gulp fonts",
+    "zip": "gulp zip",
+    "html": "gulp html",
+    "scss": "gulp scss",
+    "js": "gulp js",
+    "img": "gulp img"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Javid Gulmaliyev",
+    "email": "javidgulmaliyev@gmail.com",
+    "url": "https://github.com/javidgulmaliyev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javidgulmaliyev/reinberg.git"
+  },
+  "homepage": "https://javidgulmaliyev.github.io/reinberg",
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "babel-loader": "^10.0.0",
+    "browser-sync": "^3.0.4",
+    "browserslist": "^4.24.5",
+    "del": "^8.0.0",
+    "gulp": "^5.0.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-fonter": "^0.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^6.0.1",
+    "gulp-svg2ttf": "^3.0.0",
+    "gulp-ttf2woff2": "^5.0.0",
+    "gulp-version-number": "^0.2.4",
+    "gulp-webp": "^5.0.0",
+    "gulp-webp-html-nosvg": "^1.1.1",
+    "gulp-zip": "^6.1.0",
+    "lightningcss": "^1.30.1",
+    "postcss-sort-media-queries": "^5.2.0",
+    "sass": "^1.69.5",
+    "swiper": "^11.2.10",
+    "terser-webpack-plugin": "^5.3.9",
+    "through2": "^4.0.2",
+    "webp-converter": "2.2.3",
+    "webpack-stream": "^7.0.0"
+  }
+}

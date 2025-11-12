@@ -1,0 +1,16 @@
+.responsive-media {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  overflow: hidden;
+
+  > :where(iframe, img, picture, svg, video),
+  > :where(picture) > :where(img) {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+}
