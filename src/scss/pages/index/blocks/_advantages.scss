@@ -71,6 +71,7 @@
           z-index: -1;
           inline-size: calc(9 / 1140 * 100cqi);
           aspect-ratio: 1 / 1;
+          font-size: 0;
           background-color: variables.$color-a09ae0;
           border-radius: 50%;
           pointer-events: none;
@@ -93,6 +94,7 @@
         inline-size: 100%;
         max-inline-size: 227px;
         block-size: 1px;
+        font-size: 0;
         background-color: variables.$color-a09ae0;
         pointer-events: none;
         transform: translateX(-50%);
@@ -103,6 +105,7 @@
   // .advantages-list__icon
   &__icon {
     margin-block-end: 21px;
+    font-size: 0;
     color: variables.$color-a09ae0;
 
     @media (min-width: #{600 + 0.1px}) {

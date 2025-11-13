@@ -1,0 +1,123 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.reinmart {
+  padding-block: functions.responsive-value(50, 40) functions.responsive-value(55, 25);
+  color: variables.$color-black;
+
+  // .reinmart__logo
+  &__logo {
+    inline-size: fit-content;
+    margin-block-end: functions.responsive-value(50, 36);
+    margin-inline: auto;
+    font-size: 0;
+    color: variables.$color-2f2e71;
+
+    svg {
+      width: functions.responsive-value(400, 223);
+      height: functions.responsive-value(43, 23);
+    }
+  }
+
+  // .reinmart__cards
+  &__cards {
+    display: grid;
+    row-gap: 30px;
+    column-gap: 20px;
+
+    @media (min-width: #{768 + 0.1px}) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.reinmart-card {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  padding: functions.responsive-value(35, 15);
+  background-color: variables.$color-ededff;
+  border-radius: 15px;
+
+  // .reinmart-card__title
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 auto;
+    margin-block-end: 30px;
+    font-weight: 500;
+    font-size: functions.responsive-value(46, 32);
+    line-height: 1;
+    text-wrap: balance;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    mark {
+      font-size: functions.responsive-value(32, 24);
+      color: variables.$color-5d5891;
+    }
+  }
+
+  // .reinmart-card__images
+  &__images {
+    display: grid;
+    grid-template-rows: 201px 201px;
+    grid-template-columns: calc(254 / 234.5 * 1fr) calc(215 / 234.5 * 1fr);
+    grid-auto-rows: 201px;
+    row-gap: 20px;
+    column-gap: functions.responsive-value(20, 13);
+    margin-block-start: 35px;
+  }
+
+  // .reinmart-card__image
+  &__image {
+    font-size: 0;
+    border-radius: 15px;
+
+    // .reinmart-card__image--row
+    &--row {
+      grid-column: span 2;
+    }
+  }
+}
+
+.reinmart-advantages {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 20px;
+
+  @media (min-width: #{768 + 0.1px}) {
+    max-inline-size: 413px;
+  }
+
+  // .reinmart-advantages__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-block-size: 90px;
+    padding-block: 10px;
+    padding-inline: 25px;
+    background-color: variables.$color-white;
+    border-radius: 15px;
+  }
+
+  // .reinmart-advantages__icon
+  &__icon {
+    flex: 0 0 auto;
+    color: variables.$color-403a87;
+    font-size: 0;
+  }
+
+  // .reinmart-advantages__text
+  &__text {
+    font-size: functions.responsive-value(20, 18);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+}

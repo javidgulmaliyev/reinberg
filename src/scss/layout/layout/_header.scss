@@ -73,6 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: start;
+  font-size: 0;
 
   // .header-logo__link
   &__link {
@@ -172,6 +173,9 @@
   &__logo {
     --color-logo-brand: #{variables.$color-403a87};
     --color-logo-x: #{variables.$color-837ebd};
+
+    flex: 0 0 auto;
+    font-size: 0;
   }
 
   // .header-nav__inner
@@ -233,6 +237,7 @@
   flex: 0 0 auto;
   inline-size: 30px;
   aspect-ratio: 1 / 1;
+  font-size: 0;
   color: variables.$color-403a87;
 
   @include mixins.prefers-reduced-motion {
@@ -333,6 +338,7 @@
   inline-size: 42px;
   aspect-ratio: 1 / 1;
   padding: 12px;
+  font-size: 0;
   color: variables.$color-white;
 
   @include mixins.prefers-reduced-motion {
