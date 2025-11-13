@@ -1,0 +1,71 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.catalog {
+  padding-block: functions.responsive-value(33, 25) functions.responsive-value(20, 31);
+
+  // .catalog__title
+  &__title {
+    margin-block-end: functions.responsive-value(50, 40);
+  }
+
+  // .catalog__button
+  &__button {
+    margin-block-start: functions.responsive-value(50, 40);
+    margin-inline: auto;
+
+    @media (min-width: #{768 + 0.1px}) {
+      max-inline-size: 320px;
+    }
+  }
+}
+
+.catalog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: functions.responsive-value(20, 30);
+
+  // .catalog-list__item
+  &__item {
+  }
+}
+
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  block-size: 100%;
+  aspect-ratio: 270 / 305;
+  padding-block: 30px;
+  padding-inline: 10px;
+  font-size: 20px;
+  color: variables.$color-202f46;
+  text-align: center;
+  border: 1px solid variables.$color-d5d5f4;
+  border-radius: 10px;
+
+  // .catalog-card__title
+  &__title {
+  }
+
+  // .catalog-card__link
+  &__link {
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-hover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+  }
+}
