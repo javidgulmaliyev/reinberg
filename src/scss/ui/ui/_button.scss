@@ -1,0 +1,33 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.button {
+  --outline-color: #{variables.$color-3b3862};
+
+  min-block-size: 75px;
+  padding-block: 5px;
+  padding-inline: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: variables.$color-white;
+  background: linear-gradient(
+    164deg,
+    var(--button-background-1, #ff6416) 0%,
+    var(--button-background-2, #ff6725) 57.21%,
+    var(--button-background-3, #ce3d06) 100%
+  );
+  border-radius: 10px;
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: --button-background-1, --button-background-2, --button-background-3;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    --button-background-1: #{variables.$color-ff6725};
+    --button-background-2: #{variables.$color-ce3d06};
+    --button-background-3: #{variables.$color-ff6416};
+  }
+}

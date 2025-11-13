@@ -1,23 +1,62 @@
 <header class="header" id="header" data-header="header" data-burger="wrapper">
   <div class="header__wrapper container" data-header="wrapper">
-    <div class="header-logo">
-      <a class="header-logo__image ibg" href="#">
-        <!-- <img src="@img" alt="Лого"> -->
+    <div class="header__logo header-logo">
+      <a class="header-logo__link" href="" aria-label="Главная" aria-current="page">
+        <svg class="header-logo__item header-logo__item--1" width="106" height="41" aria-hidden="true">
+          <use xlink:href="#icon-logo-1"></use>
+        </svg>
+        <svg class="header-logo__item header-logo__item--2" width="106" height="41" aria-hidden="true">
+          <use xlink:href="#icon-logo-2"></use>
+        </svg>
       </a>
     </div>
-    <button class="burger-button" data-burger="button">
-      <span class="burger-button__line burger-button__line--top"></span>
-      <span class="burger-button__line burger-button__line--center"></span>
-      <span class="burger-button__line burger-button__line--bottom"></span>
-    </button>
-    <div class="header-nav" data-burger="menu">
-      <nav class="header-nav__inner" aria-label="Главная навигация">
-        <ul class="header-nav__list">
-          <li class="header-nav__item">
-            <a class="header-nav__link" href="#">link</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="header__nav header-nav" data-burger="menu">
+      <div class="header-nav__wrapper">
+        <div class="header-nav__top">
+          <div class="header-nav__logo" aria-hidden="true">
+            <svg width="158" height="60">
+              <use xlink:href="#icon-logo-2"></use>
+            </svg>
+          </div>
+          <button class="burger-close-button" data-burger="close">
+            <span class="burger-close-button__line burger-close-button__line--top"></span>
+            <span class="burger-close-button__line burger-close-button__line--bottom"></span>
+          </button>
+        </div>
+        <nav class="header-nav__inner" aria-label="Главная навигация">
+          <ul class="header-nav__list">
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">Главная</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">Каталог</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">Покупателю</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">О компании</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="header-nav__button button" id="nav-button">Оставить заявку</button>
+      </div>
     </div>
+    <movable-element target="nav-button" to="before">
+      <div class="header__links header-links">
+        <div class="header-links__wrapper">
+          <a class="header-links__tel" href="tel:+8805503358">8 800 550 33 58</a>
+          <a class="header-links__mail" href="mailto:info@reinberg.ru">info@reinberg.ru</a>
+        </div>
+      </div>
+    </movable-element>
+    <button class="burger-open-button" data-burger="open">
+      <span class="burger-open-button__line burger-open-button__line--top"></span>
+      <span class="burger-open-button__line burger-open-button__line--center"></span>
+      <span class="burger-open-button__line burger-open-button__line--bottom"></span>
+    </button>
   </div>
 </header>

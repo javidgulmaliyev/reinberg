@@ -1,6 +1,5 @@
 @use "../functions/functions";
 
 :root {
-  --header-height: #{functions.responsive-value(105, 75)};
-  // --outline-color: ;
+  --header-height: #{functions.responsive-value(105, 75, "default", 375, "fixed-both", "px")};
 }

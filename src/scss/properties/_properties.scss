@@ -1,0 +1,19 @@
+@use "../variables/variables";
+
+@property --button-background-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #{variables.$color-ff6416};
+}
+
+@property --button-background-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #{variables.$color-ff6725};
+}
+
+@property --button-background-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #{variables.$color-ce3d06};
+}
