@@ -6,7 +6,7 @@
   --outline-color: #{variables.$color-3b3862};
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   inline-size: 100%;
   min-block-size: 75px;
@@ -24,6 +24,10 @@
   );
   border-radius: 10px;
 
+  &:has(.button__icon) {
+    padding-inline: functions.responsive-value(29, 26) functions.responsive-value(22, 20);
+  }
+
   @include mixins.prefers-reduced-motion {
     transition-property: --button-background-1, --button-background-2, --button-background-3;
     transition-duration: 0.3s;
@@ -33,5 +37,15 @@
     --button-background-1: #{variables.$color-ff6725};
     --button-background-2: #{variables.$color-ce3d06};
     --button-background-3: #{variables.$color-ff6416};
+  }
+
+  // .button__text
+  &__text {
+  }
+
+  // .button__icon
+  &__icon {
+    flex: 0 0 auto;
+    font-size: 0;
   }
 }
