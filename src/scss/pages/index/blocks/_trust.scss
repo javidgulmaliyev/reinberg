@@ -1,0 +1,176 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.trust {
+  padding-block: functions.responsive-value(54, 52) functions.responsive-value(63, 28);
+
+  // .trust__title
+  &__title {
+    margin-block-end: functions.responsive-value(60, 40);
+  }
+
+  // .trust__images
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: functions.responsive-value(55, 40);
+    margin-block-end: functions.responsive-value(74, 40);
+    font-size: 0;
+
+    @media (min-width: #{550 + 0.1px}) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: #{1160 + 0.1px}) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    img {
+      max-inline-size: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.trust-description {
+  display: grid;
+  gap: functions.responsive-value(63, 40);
+  padding: functions.responsive-value(30, 20);
+  border: 1px solid variables.$color-d5d5f4;
+  border-radius: 10px;
+
+  @media (min-width: #{992 + 0.1px}) {
+    grid-template-columns: calc(487 / 508.5 * 1fr) calc(530 / 508.5 * 1fr);
+  }
+
+  // .trust-description__content
+  &__content {
+    position: relative;
+    isolation: isolate;
+    padding-block-start: functions.responsive-value(100, 90);
+
+    @media (min-width: #{992 + 0.1px}) {
+      padding-inline-start: 10px;
+    }
+
+    &::after {
+      content: "“";
+      position: absolute;
+      inset-block-start: functions.responsive-value(-28, -39);
+      inset-inline-start: 1px;
+      z-index: -1;
+      font-size: 250px;
+      color: variables.$color-403a87;
+    }
+
+    > *:last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  // .trust-description__caption
+  &__caption {
+    margin-block-end: 30px;
+    font-size: 24px;
+  }
+
+  // .trust-description__text
+  &__text {
+    max-inline-size: 431px;
+  }
+}
+
+.trust-form {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: functions.responsive-value(30, 20);
+  border-radius: 15px;
+  color: variables.$color-white;
+  background-image: linear-gradient(226deg, variables.$color-403a87 0%, variables.$color-1d1a3b 100%);
+  overflow: hidden;
+
+  // .trust-form__title
+  &__title {
+    font-weight: 500;
+    font-size: functions.responsive-value(32, 22, 374, 280, "fixed-start-value", "px");
+
+    @media (min-width: #{374 + 0.1px}) {
+      font-size: functions.responsive-value(42, 32);
+    }
+  }
+
+  // .trust-form__row
+  &__row {
+    position: relative;
+    isolation: isolate;
+    inline-size: 100%;
+  }
+
+  // .trust-form__input
+  &__input {
+    block-size: 70px;
+    padding-inline: 20px functions.responsive-value(80, 73);
+    font-size: functions.responsive-value(22, 12, 374, 280, "fixed-start-value", "px");
+    line-height: 1;
+    color: variables.$color-3b3862;
+    background-color: variables.$color-white;
+    border-radius: 15px;
+
+    &:focus {
+      &::placeholder {
+        color: rgba($color: variables.$color-3b3862, $alpha: 0);
+      }
+    }
+
+    @media (min-width: #{374 + 0.1px}) {
+      font-size: functions.responsive-value(24, 22);
+    }
+  }
+
+  // .trust-form__button
+  &__button {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: functions.responsive-value(20, 18);
+    z-index: 1;
+    font-size: 0;
+    color: variables.$color-403a87;
+    transform: translateY(-50%);
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-hover;
+    }
+
+    svg {
+      width: functions.responsive-value(40, 35);
+      height: functions.responsive-value(40, 35);
+    }
+  }
+
+  // .trust-form__image
+  &__image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    font-size: 0;
+  }
+}
