@@ -6,7 +6,7 @@
   --outline-color: #{variables.$color-3b3862};
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   inline-size: 100%;
   min-block-size: 75px;
@@ -25,6 +25,7 @@
   border-radius: 10px;
 
   &:has(.button__icon) {
+    justify-content: space-between;
     padding-inline: functions.responsive-value(29, 26) functions.responsive-value(22, 20);
   }
 
